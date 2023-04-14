@@ -34,11 +34,13 @@ export default function Editor(props: IEditorProps) {
   const onBtnClick = () => {
     props.clickEvent()
     axios({
-      method: 'post',
-      url: 'http://localhost:3000/chat',
-      data: {
-        apiKey: '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'
-      }
+      method: 'get',
+      url: 'http://localhost:3000/',
+      // method: 'post',
+      // url: 'http://localhost:3000/chat',
+      // data: {
+      //   apiKey: 'sk-'
+      // }
     })
     .then(res => {
       console.log(res)

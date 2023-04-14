@@ -24,4 +24,4 @@ async function verify(apiKey) {
   }
 }
 
-verify("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")
+verify("sk-")
