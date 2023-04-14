@@ -33,10 +33,18 @@ export default function Editor(props: IEditorProps) {
   }
   const onBtnClick = () => {
     props.clickEvent()
-    axios.post('https://localhost:9876/chat', {
-      apiKey: "sk-"
-    }).then(res => {
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/chat',
+      data: {
+        apiKey: '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'
+      }
+    })
+    .then(res => {
       console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
     })
     // verify("sk-")
   }

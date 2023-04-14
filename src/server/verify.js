@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 async function verify(apiKey) {
   const options = {
     method: 'POST',
@@ -23,8 +25,3 @@ async function verify(apiKey) {
 }
 
 verify("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")
-
-
-
-
-module.exports = router;
