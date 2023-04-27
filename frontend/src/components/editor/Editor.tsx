@@ -35,7 +35,7 @@ export default function Editor(props: IEditorProps) {
     props.clickEvent()
     axios({
       method: 'get',
-      url: 'http://localhost:3000/',
+      url: 'http://localhost:3001/',
       // method: 'post',
       // url: 'http://localhost:3000/chat',
       // data: {

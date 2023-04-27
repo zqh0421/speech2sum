@@ -22,5 +22,5 @@ async function transcribe(apiKey) {
   }
 }
 
-// transcribe("sk-")
+transcribe("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")
 export default transcribe
