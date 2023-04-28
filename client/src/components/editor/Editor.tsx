@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './Editor.css'
 import data from '../../../../user-data.json'
+import testData from '../../../../test-data.json'
 interface IEditorProps {
   clickEvent: Function
   available: boolean
@@ -32,23 +33,37 @@ export default function Editor(props: IEditorProps) {
       console.log(err)
     }
   }
-  const onBtnClick = () => {
+  const onConfigBtnClick = () => {
+    console.log(testData.transcription)
     // props.clickEvent()
-    axios({
-      // method: 'get',
-      // url: 'http://localhost:3001/v1/test/test1',
-      method: 'post',
-      url: 'http://localhost:3001/v1/transcribe/chat',
-      data: {
-        apiKey: data['api-key']
-      }
-    })
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+    // axios({
+    //   // method: 'get',
+    //   // url: 'http://localhost:3001/v1/test/test1',
+    //   method: 'get',
+    //   url: 'http://localhost:3001/v1/transcribe/result',
+    // })
+    // .then(res => {
+    //   console.log(res)
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // })
+  }
+  const onBtnClick = () => {
+    console.log(testData.transcription)
+    // props.clickEvent()
+    // axios({
+    //   // method: 'get',
+    //   // url: 'http://localhost:3001/v1/test/test1',
+    //   method: 'get',
+    //   url: 'http://localhost:3001/v1/transcribe/result',
+    // })
+    // .then(res => {
+    //   console.log(res)
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // })
   }
   return (
     <div className="editor-container" >
@@ -56,7 +71,7 @@ export default function Editor(props: IEditorProps) {
         !props.available &&
         <div className="btns unavailable">
           <p>Please config API-KEY before your start.</p>
-          <button type="button" onClick={onBtnClick}>Config</button>
+          <button type="button" onClick={onConfigBtnClick}>Config</button>
         </div>
       }
       {
