@@ -32,10 +32,10 @@ export default function Editor(props: IEditorProps) {
     }
   }
   const onBtnClick = () => {
-    props.clickEvent()
+    // props.clickEvent()
     axios({
       method: 'get',
-      url: 'http://localhost:3001/',
+      url: 'http://localhost:3001/v1/test/test1',
       // method: 'post',
       // url: 'http://localhost:3000/chat',
       // data: {
@@ -48,22 +48,20 @@ export default function Editor(props: IEditorProps) {
     .catch(err => {
       console.log(err)
     })
-    // verify("sk-")
   }
   return (
     <div className="editor-container" >
       {
         !props.available &&
-        <div className="unavailable">
+        <div className="btns unavailable">
           <p>Please config API-KEY before your start.</p>
           <button type="button" onClick={onBtnClick}>Config</button>
         </div>
       }
       {
         props.available &&
-        <div className="available">
-          <button type="button" onClick={onBtnClick}>Upload Speech File</button>
-          <button type="button" onClick={onBtnClick}>Record</button>
+        <div className="btns available">
+          <button type="button" onClick={onBtnClick}>Start Transcription</button>
         </div>
       }
     </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import './Home.css'
+import data from '../../../../user-data.json'
 import Editor from '../../components/editor/Editor'
 // import ConfigDrawer from '../../components/drawer/Drawer'
 import { Drawer, Input } from 'antd'
@@ -7,6 +8,12 @@ import { Drawer, Input } from 'antd'
 export default function Home() {
   const [isOpen, setIsOpen] = useState(true)
   const [apiKey, setApiKey] = useState("")
+  useEffect(() => {
+    setApiKey(data["api-key"])
+  }, [])
+  useEffect(() => {
+    console.log(apiKey)
+  }, [apiKey])
   const showDrawer = () => {
     setIsOpen(true);
   }
@@ -28,6 +35,7 @@ export default function Home() {
         <Input
           placeholder="sk-..."
           onChange={onApiKeyChange}
+          value={apiKey}
         />
         <p>Some contents...</p>
         <p>Some contents...</p>

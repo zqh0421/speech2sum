@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A Speech-to-Summary web application.",
   "scripts": {
-    "server": "nodemon backend/index.js",
-    "dev": "cd frontend && npm run dev"
+    "server": "cd server && npm i && nodemon index.js",
+    "dev": "cd client && npm i && npm run dev"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   "homepage": "https://github.com/zqh0421/speech2sum#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express-validator": "^7.0.1"
   }
 }
