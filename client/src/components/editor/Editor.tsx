@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './Editor.css'
+import data from '../../../../user-data.json'
 interface IEditorProps {
   clickEvent: Function
   available: boolean
@@ -34,13 +35,13 @@ export default function Editor(props: IEditorProps) {
   const onBtnClick = () => {
     // props.clickEvent()
     axios({
-      method: 'get',
-      url: 'http://localhost:3001/v1/test/test1',
-      // method: 'post',
-      // url: 'http://localhost:3000/chat',
-      // data: {
-      //   apiKey: 'sk-'
-      // }
+      // method: 'get',
+      // url: 'http://localhost:3001/v1/test/test1',
+      method: 'post',
+      url: 'http://localhost:3001/v1/transcribe/chat',
+      data: {
+        apiKey: data['api-key']
+      }
     })
     .then(res => {
       console.log(res)
